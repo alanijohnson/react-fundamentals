@@ -18,10 +18,17 @@
     // You're going to re-implement this code using React!
     // 💣 So go ahead and delete this implementation (or comment it out for now)
     // These three lines are similar to React.createElement
-    const element = React.createElement('div', {children: 'Hello World', className: 'container'});
+
+    const spanA = React.createElement('span', {children: 'Hello'})
+    const spanB = React.createElement('span', {children: 'World'})
+
+    const children = [spanA, spanB];
+
+    const element = React.createElement('div', {className: 'container', children: children});
     rootElement.append(element);
 
-    ReactDOM.render(element, rootElement);
+
+   ReactDOM.render(element, rootElement);
 
     // 🐨 Please re-implement the regular document.createElement code above
     // with these React API calls
