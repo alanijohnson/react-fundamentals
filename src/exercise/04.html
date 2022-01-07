@@ -19,8 +19,9 @@
       return (
               <>
               {props.messages.map(message => (
-
+                <React.Fragment key={message.id}>
                     <Message subject={message.subject} greeting={message.greeting} />
+                </React.Fragment>
                 ))
 
               }
@@ -35,18 +36,19 @@
     }
 
     const element = (
-      <div className="container">
         <Messages messages={[
           {
+            id: 0,
             subject: "World",
             greeting: "Hello",
           },
           {
+            id: 1,
             subject: "World",
             greeting: "Goodbye",
           },
         ]}/>
-      </div>
+
     )
 
 
