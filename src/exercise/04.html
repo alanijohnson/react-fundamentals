@@ -9,7 +9,7 @@
   <script type="text/babel">
     // 🐨 Make a function called `message` which returns the JSX we want to share
 
-    function message(text) {
+    function Message(text) {
       return (
               <div className="message">{text.children}</div>
       );
@@ -19,13 +19,10 @@
 
     // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
 
-    const hello = React.createElement(message, {children: "hello world"});
-    const bye = React.createElement(message, {children: "goodbye world"});
-
     const element = (
       <div className="container">
-        {hello}
-        {bye}
+        <Message>Hello World!</Message>
+        <Message>Goodbye World!</Message>
       </div>
     )
 
