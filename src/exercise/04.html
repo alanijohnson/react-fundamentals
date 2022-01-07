@@ -15,6 +15,19 @@
       );
     }
 
+    function Messages(props) {
+      return (
+              <>
+              {props.messages.map(message => (
+
+                    <Message subject={message.subject} greeting={message.greeting} />
+                ))
+
+              }
+              </>
+      );
+    }
+
 
     Message.propTypes = {
       subject: PropTypes.string.isRequired,
@@ -23,8 +36,16 @@
 
     const element = (
       <div className="container">
-        <Message subject="World" />
-        <Message greeting={3} subject="World" />
+        <Messages messages={[
+          {
+            subject: "World",
+            greeting: "Hello",
+          },
+          {
+            subject: "World",
+            greeting: "Goodbye",
+          },
+        ]}/>
       </div>
     )
 
