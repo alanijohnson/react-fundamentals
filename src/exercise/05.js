@@ -21,8 +21,9 @@ const largeBox = <div className="box--large box">large orange box</div>
 
 
 const Box = (props) => {
+  const className = `box box--${props.size}`;
   return (
-      <div className={props.className}>{props.children}</div>
+      <div className={className}>{props.children}</div>
   );
 }
 
@@ -32,7 +33,7 @@ function App() {
       {smallBox}
       {mediumBox}
       {largeBox}
-      <Box className="box box--large">Test</Box>
+      <Box size="small">Test</Box>
     </div>
   )
 }
