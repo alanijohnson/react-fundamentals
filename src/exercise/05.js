@@ -18,12 +18,21 @@ const smallBox = <div className="box--small box">small lightblue box</div>
 const mediumBox = <div className="box--medium box">medium pink box</div>
 const largeBox = <div className="box--large box">large orange box</div>
 
+
+
+const Box = (props) => {
+  return (
+      <div className={props.className}>{props.children}</div>
+  );
+}
+
 function App() {
   return (
     <div>
       {smallBox}
       {mediumBox}
       {largeBox}
+      <Box className="box box--large">Test</Box>
     </div>
   )
 }
