@@ -6,19 +6,16 @@ import * as React from 'react'
 function UsernameForm({onSubmitUsername}) {
     const usernameRef = React.useRef(null);
     const [errorState, setErrorState] = React.useState(false);
+    const [username, setUsername] = React.useState('');
   function handleSubmit(event) {
       event.preventDefault();
-      const value = usernameRef.current.value;
-      onSubmitUsername(value);
+      //const value = usernameRef.current.value;
+      onSubmitUsername(username);
       event.target.elements.username.value = "";
   }
 
   function handleChange(event) {
-      if (event.target.value.toLowerCase() !== event.target.value) {
-          setErrorState(true);
-      } else {
-          setErrorState(false);
-      }
+      setUsername(event.target.value.toLowerCase());
   }
 
   const Error = (props) => {
@@ -30,7 +27,7 @@ function UsernameForm({onSubmitUsername}) {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
-        <input ref={usernameRef} type="text" id="username" onChange={handleChange}/>
+        <input ref={usernameRef} type="text" id="username" onChange={handleChange} value={username}/>
       </div>
       <button type="submit" disabled={errorState}>Submit</button>
         <Error>"The text must be lowercase"</Error>
